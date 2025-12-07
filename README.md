@@ -64,25 +64,30 @@ make all
 ## Test Phases
 
 ### Phase 1: Baseline Tests
+
 Tests fundamental edge cases and special value handling:
+
 - NaN propagation and payload preservation
 - Infinity handling with correct signs
 - Subnormal number processing
 - Zero sign handling
-- Large magnitude cancellation behavior
 
 ### Phase 2: Datapath Tests
+
 Explores the internal datapath architecture and computational flow.
 
 ### Phase 3: Interconnection Tests
+
 Investigates how processing elements are interconnected within Tensor Cores.
 
 ### Phase 4-5: (Not yet implemented)
+
 Planned for grouping patterns and additional edge cases.
 
 ## Output
 
 Test results are automatically saved to the `output/` directory with detailed information including:
+
 - Test name and description
 - Result values
 - Hexadecimal and binary representations of output

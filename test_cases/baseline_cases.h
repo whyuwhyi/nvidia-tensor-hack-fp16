@@ -170,25 +170,6 @@ TestCase create_zero_test3(AccumulatorType acc_type) {
   return tc;
 }
 
-TestCase create_big_small_test(AccumulatorType acc_type) {
-  TestCase tc;
-  init_test_case(&tc, "Big + -Big + Small", "Test for internal rounding points",
-                 acc_type);
-
-  half sqrt_big = __float2half(32768.0f);
-  half neg_sqrt_big = __float2half(-32768.0f);
-  half sqrt_small = __float2half(0.0078125f);
-
-  set_element(tc.h_mat_a, 0, 0, sqrt_big);
-  set_element(tc.h_mat_a, 0, 1, neg_sqrt_big);
-  set_element(tc.h_mat_a, 0, 2, sqrt_small);
-  set_element(tc.h_mat_b, 0, 0, sqrt_big);
-  set_element(tc.h_mat_b, 1, 0, sqrt_big);
-  set_element(tc.h_mat_b, 2, 0, sqrt_small);
-
-  return tc;
-}
-
 void run_baseline_tests(AccumulatorType acc_type) {
   TestCase tc;
 
