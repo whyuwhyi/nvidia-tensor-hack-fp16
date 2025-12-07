@@ -94,16 +94,17 @@ TestCase create_fp32_truncation_negative_test(AccumulatorType acc_type) {
   init_test_case(&tc, "FP32 Truncation Negative",
                  "Test FP32 truncation with negative values", acc_type);
 
-  half one = __float2half(-1.0f);
+  half pos_one = __float2half(1.0f);
+  half neg_one = __float2half(-1.0f);
   half val1 = __float2half(-ldexpf(1.0f, -23));
   half val2 = __float2half(-ldexpf(1.0f, -24));
 
-  set_element(tc.h_mat_a, 0, 0, one);
+  set_element(tc.h_mat_a, 0, 0, neg_one);
   set_element(tc.h_mat_a, 0, 1, val1);
   set_element(tc.h_mat_a, 0, 2, val2);
-  set_element(tc.h_mat_b, 0, 0, one);
-  set_element(tc.h_mat_b, 1, 0, one);
-  set_element(tc.h_mat_b, 2, 0, one);
+  set_element(tc.h_mat_b, 0, 0, pos_one);
+  set_element(tc.h_mat_b, 1, 0, pos_one);
+  set_element(tc.h_mat_b, 2, 0, pos_one);
 
   return tc;
 }
@@ -132,16 +133,17 @@ TestCase create_fp16_rne_negative_test(AccumulatorType acc_type) {
   init_test_case(&tc, "FP16 RNE Negative",
                  "Test FP16 RNE rounding with negative values", acc_type);
 
-  half one = __float2half(-1.0f);
+  half pos_one = __float2half(1.0f);
+  half neg_one = __float2half(-1.0f);
   half val1 = __float2half(-ldexpf(1.0f, -10));
   half val2 = __float2half(-ldexpf(1.0f, -11));
 
-  set_element(tc.h_mat_a, 0, 0, one);
+  set_element(tc.h_mat_a, 0, 0, neg_one);
   set_element(tc.h_mat_a, 0, 1, val1);
   set_element(tc.h_mat_a, 0, 2, val2);
-  set_element(tc.h_mat_b, 0, 0, one);
-  set_element(tc.h_mat_b, 1, 0, one);
-  set_element(tc.h_mat_b, 2, 0, one);
+  set_element(tc.h_mat_b, 0, 0, pos_one);
+  set_element(tc.h_mat_b, 1, 0, pos_one);
+  set_element(tc.h_mat_b, 2, 0, pos_one);
 
   return tc;
 }
